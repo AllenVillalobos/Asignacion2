@@ -1,0 +1,86 @@
+﻿using System;
+using System.Collections.Generic;
+using Asignacion2.Conexion;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+
+namespace Asignacion2.Paginas
+{
+    public partial class HojaClinica : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["UsuarioNombre"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                txtUsuarios.Text = Session["UsuarioNombre"].ToString();
+                txtFecha.Text = txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                txtUsuario.Text = Session["UsuarioNombre"].ToString();
+                txtFechaAdicion.Text = txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            }
+        }
+
+        public void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DatabaseHelper dbHelper = new DatabaseHelper();
+            try
+            {
+                String query = "spBuscarMascotaPorIdentificador";
+                SqlParameter[] sqlParameters = new SqlParameter[] {
+                new SqlParameter("@pIdentificadorMascota",System.Data.SqlDbType.Int,15){Value = int.Parse(txtIDMascota.Text)}
+            };
+                var resultado = dbHelper.ExecuteSelectQuery(query, sqlParameters);
+                if (resultado.Rows.Count >= 1)
+                {
+                    txtNombreMas.Text = resultado.Rows[0]["MAS_NOMBRE"].ToString();
+                    txtPeso.Text = resultado.Rows[0]["MAS_PESO"].ToString();
+                    txtAlergias.Text = resultado.Rows[0]["MAS_ALERGIAS"].ToString();
+                    txtSexo.Text = resultado.Rows[0]["MAS_SEXO"].ToString();
+                    txtFechaNacimiento.Text =Convert.ToDateTime(resultado.Rows[0]["MAS_FECHA_NACIMIENTO"]).ToString("dd/MM/yyyy");
+                    txtIDMascota.Text = resultado.Rows[0]["MAS_ID"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("Mascota No Encontrada"))
+                {
+                    Response.Redirect("AgregarMascota.aspx");
+                }
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public void btnActualizar_Click(object sender, EventArgs e)
+        {
+            DatabaseHelper dbHelper = new DatabaseHelper();
+            try
+            {
+                String query = "spActualizarMascota";
+                SqlParameter[] sqlParameters = new SqlParameter[] {
+                    new SqlParameter("@pIdentificadorMascota", System.Data.SqlDbType.Int, 15) { Value = int.Parse(txtIDMascota.Text) },
+                    new SqlParameter("@pNombre", System.Data.SqlDbType.NVarChar, 50) { Value = txtNombreMas.Text },
+                    new SqlParameter("@pPeso", System.Data.SqlDbType.Float) { Value = double.Parse(txtPeso.Text) },
+                    new SqlParameter("@pAlergias", System.Data.SqlDbType.NVarChar, 100) { Value = txtAlergias.Text },
+                    new SqlParameter("@pModificadoPor", System.Data.SqlDbType.NVarChar, 10) { Value = txtUsuarios.Text },
+                    new SqlParameter("@pFechaModificacion", System.Data.SqlDbType.NVarChar, 15) { Value = txtFecha.Text },
+                };
+                dbHelper.ExecuteQuery(query,sqlParameters);
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        public void btnGuardar_Click(object sender, EventArgs e)
+        {
+            // Aquí puedes agregar la lógica para guardar los datos de la hoja clínica
+            // Por ejemplo, guardar en una base de datos o en un archivo
+            Response.Write("<script>alert('Datos guardados correctamente');</script>");
+        }
+    }
+}
