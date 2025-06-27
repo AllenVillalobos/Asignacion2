@@ -76,11 +76,39 @@ namespace Asignacion2.Paginas
                 Console.WriteLine(ex.Message);
             }
         }
-        public void btnGuardar_Click(object sender, EventArgs e)
+        public void btnGuardarHoja_Click(object sender, EventArgs e)
         {
-            // Aquí puedes agregar la lógica para guardar los datos de la hoja clínica
-            // Por ejemplo, guardar en una base de datos o en un archivo
-            Response.Write("<script>alert('Datos guardados correctamente');</script>");
+            DatabaseHelper dbHelper = new DatabaseHelper();
+            try
+            {
+                String query = "spCrearHojaClinica";
+                SqlParameter[] sqlParameters = new SqlParameter[] {
+                    new SqlParameter("@pFechaAdiccion", System.Data.SqlDbType.NVarChar,150) { Value = txtFechaAdicion.Text},
+                    new SqlParameter("@pSintomas", System.Data.SqlDbType.NVarChar, 150) { Value = txtSintomas.Text},
+                    new SqlParameter("@pDiagnostico", System.Data.SqlDbType.NVarChar,150) { Value = txtDiagnostico.Text},
+                    new SqlParameter("@pTratamiento", System.Data.SqlDbType.NVarChar, 150) { Value = txtTratamiento.Text},
+                    new SqlParameter("@pIdMascota", System.Data.SqlDbType.Int) { Value = int.Parse(txtIDMascota.Text)},
+                    new SqlParameter("@pAdicionadoPor", System.Data.SqlDbType.NVarChar, 150) { Value = txtUsuario.Text},
+                };
+                dbHelper.ExecuteQuery(query, sqlParameters);
+            }
+            catch (Exception ex)
+            {
+                txtMensaje.Text = ex.Message;
+            }
+        }
+        public void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtTratamiento.Text = "";
+            txtPeso.Text = "";
+            txtNombreMas.Text = "";
+            txtIDMascota.Text = "";
+            txtPeso.Text = "";
+            txtSexo.Text = "";
+            txtFechaNacimiento.Text = "";
+            txtAlergias.Text = "";
+            txtSintomas.Text = "";
+            txtDiagnostico.Text = "";
         }
     }
 }
