@@ -77,18 +77,18 @@
 
         <asp:Label>Diagnóstico:</asp:Label><br />
         <asp:TextBox TextMode="MultiLine" Rows="5" runat="server"
-                     ID="TextBox1"
+                     ID="txtDiagnostico"
                      CssClass="form-control" /><br />
 
         <asp:Label>Tratamiento:</asp:Label><br />
         <asp:TextBox TextMode="MultiLine" Rows="5" runat="server"
-                     ID="TextBox2"
+                     ID="txtTratamiento"
                      CssClass="form-control" /><br />
 
         <asp:Button runat="server" Text="Limpiar Campos" ID="btnLimpiar"
-                    CssClass="btn-primary" />
-        <asp:Button runat="server" Text="GuardarHoja" ID="btnGuardarHoja"
-                    CssClass="btn-primary" />
+                    CssClass="btn-primary" OnClick="btnLimpiar_Click" />
+        <asp:Button runat="server" Text="Guardar Hoja" ID="btnGuardarHoja"
+                    CssClass="btn-primary" OnClick="btnGuardarHoja_Click" />
       </div>
 
       <!-- Auditoría -->
@@ -109,6 +109,7 @@
         <asp:TextBox ReadOnly="true" ID="txtFechaModificacion" runat="server"
                      CssClass="form-control" />
       </div>
+        <asp:Label ID="txtMensaje" runat="server"></asp:Label>
 
     </div>
   </form>

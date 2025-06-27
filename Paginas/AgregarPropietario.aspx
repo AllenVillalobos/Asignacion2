@@ -13,13 +13,38 @@
   <form id="form1" runat="server">
     <div class="clinica-container">
       <div class="gradient-card">
-        
-        <h2 class="page-title">Registrar / Editar Dueño</h2>
 
-        <label for="txtNombreDueño">Nombre</label>
-        <asp:TextBox ID="txtNombreDueño" runat="server"
+           <asp:Label runat="server">Usuario Conectado</asp:Label><br />
+ <asp:TextBox ReadOnly="true" ID="txtUsuarios" runat="server"></asp:TextBox>
+
+       <h2 class="page-title">Registrar / Editar Dueño</h2>
+
+             <label for="txtIdentificacion">Identificacion</label>
+        <asp:TextBox ID="txtIdentificacion" runat="server"
                      CssClass="form-control"
-                     Placeholder="Nombre completo" />
+                     Placeholder="Identificacion" />
+
+
+        <label for="txtNombreDueño1">Primer Nombre</label>
+        <asp:TextBox ID="txtNombreDueño1" runat="server"
+                     CssClass="form-control"
+                     Placeholder="Primer Nombre" />
+
+            <label for="txtNombreDueño2">Segundo Nombre</label>
+       <asp:TextBox ID="txtNombreDueño2" runat="server"
+                    CssClass="form-control"
+                    Placeholder="Segundo Nombre" />
+
+                      <label for="txtApellidoDueño1">Primer Apellido</label>
+       <asp:TextBox ID="txtApellidoDueño1" runat="server"
+                    CssClass="form-control"
+                    Placeholder="Primer Apellido" />
+
+                 <label for="txtApellidoDueño2">Segundo Apellido</label>
+       <asp:TextBox ID="txtApellidoDueño2" runat="server"
+                    CssClass="form-control"
+                    Placeholder="Segundo Apellido" />
+
 
         <label for="txtTelefonoDueño">Teléfono</label>
         <asp:TextBox ID="txtTelefonoDueño" runat="server"
@@ -36,9 +61,31 @@
                     CssClass="btn-primary"
                     OnClick="btnGuardarDueño_Click" />
 
+             <asp:Button ID="btnLimiar" runat="server"
+                    Text="Limpiar"
+                    CssClass="btn-primary"
+                    OnClick="btnLimiar_Click" />
+
         <asp:Label ID="lblMensaje" runat="server"
                    CssClass="error-msg" />
       </div>
+                    <div class="gradient-card">
+                <asp:Label>Adicionado Por</asp:Label><br />
+                <asp:TextBox ReadOnly="true" ID="txtUsuario" runat="server"
+                    CssClass="form-control" /><br />
+
+                <asp:Label>Fecha de Adición</asp:Label><br />
+                <asp:TextBox ReadOnly="true" ID="txtFechaAdicion" runat="server"
+                    CssClass="form-control" /><br />
+
+                <asp:Label>Modificado Por</asp:Label><br />
+                <asp:TextBox ReadOnly="true" ID="txtModificadoPor" runat="server"
+                    CssClass="form-control" /><br />
+
+                <asp:Label>Fecha de Modificación</asp:Label><br />
+                <asp:TextBox ReadOnly="true" ID="txtFechaModificacion" runat="server"
+                    CssClass="form-control" />
+            </div>
     </div>
   </form>
 </body>
