@@ -1,16 +1,15 @@
 ﻿using System;
 using Asignacion2.Conexion;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Web.UI;
 
 namespace Asignacion2.Paginas
 {
     public partial class AgregarPropietario : System.Web.UI.Page
     {
+        /// <summary>
+        /// Carga inicial de la página. Verifica sesión activa y configura campos de usuario.
+        /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UsuarioNombre"] == null)
@@ -25,6 +24,9 @@ namespace Asignacion2.Paginas
             }
         }
 
+        /// <summary>
+        /// Guarda un nuevo propietario en la base de datos usando datos del formulario.
+        /// </summary>
         public void btnGuardarDueño_Click(object sender, EventArgs e)
         {
             DatabaseHelper db = new DatabaseHelper();
@@ -45,12 +47,15 @@ namespace Asignacion2.Paginas
                 };
                 db.ExecuteSelectQuery(query, parameters);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine("Error al guardar el propietario: " + ex.Message);
             }
-
         }
+
+        /// <summary>
+        /// Limpia todos los campos del formulario para ingresar nuevos datos.
+        /// </summary>
         public void btnLimiar_Click(object sender, EventArgs e)
         {
             txtIdentificacion.Text = "";

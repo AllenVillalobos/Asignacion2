@@ -2,6 +2,18 @@
    Estilos principales
    Archivo: /Estilos/main.css
    ========================= */
+/* Estilo básico para el calendario */
+.calendar-basico {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fefefe;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
 
 /* Variables de color */
 :root {
