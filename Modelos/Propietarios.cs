@@ -6,45 +6,45 @@ using System.Web;
 namespace Asignacion2.Modelos
 {
     /// <summary>
-    /// Representa a un propietario de una o más mascotas dentro del sistema.
-    /// Almacena información personal y datos.
+    /// Representa a un propietario de una o más mascotas dentro del sistema
+    /// Almacena información personal y datos
     /// </summary>
     public class Propietarios
     {
-        /// <summary>Identificador único del propietario.</summary>
+        /// <summary>Identificador único del propietario</summary>
         private int identificador { get; set; }
 
-        /// <summary>Primer nombre del propietario.</summary>
+        /// <summary>Primer nombre del propietario</summary>
         private String primerNombre { get; set; }
 
-        /// <summary>Segundo nombre del propietario (opcional).</summary>
+        /// <summary>Segundo nombre del propietario (opcional)</summary>
         private String segundoNombre { get; set; }
 
-        /// <summary>Primer apellido del propietario.</summary>
+        /// <summary>Primer apellido del propietario</summary>
         private String primerApellido { get; set; }
 
-        /// <summary>Segundo apellido del propietario.</summary>
+        /// <summary>Segundo apellido del propietario (opcional)</summary>
         private String segundoApellido { get; set; }
 
-        /// <summary>Número de identificación oficial del propietario.</summary>
+        /// <summary>Número de identificación oficial del propietario</summary>
         private String numeroIdentificacion { get; set; }
 
-        /// <summary>Correo electrónico de contacto del propietario.</summary>
+        /// <summary>Correo electrónico de contacto del propietario</summary>
         private String correoElectronico { get; set; }
 
-        /// <summary>Número de teléfono celular del propietario.</summary>
+        /// <summary>Número de teléfono celular del propietario</summary>
         private String telefonoCelular { get; set; }
 
-        /// <summary>Fecha en la que se registró inicialmente al propietario.</summary>
+        /// <summary>Fecha en la que se registró inicialmente al propietario</summary>
         private DateTime fechaAdicion { get; set; }
 
-        /// <summary>Última fecha en la que se modificaron los datos del propietario.</summary>
+        /// <summary>Última fecha en la que se modificaron los datos del propietario (opcional)</summary>
         private DateTime fechaModificacion { get; set; }
 
-        /// <summary>Nombre del usuario que realizó el registro del propietario.</summary>
+        /// <summary>Nombre del usuario que realizó el registro del propietario</summary>
         private String adicionadoPor { get; set; }
 
-        /// <summary>Nombre del usuario que realizó la última modificación</summary>
+        /// <summary>Nombre del usuario que realizó la última modificación (opcional)</summary>
         private String modificadoPor { get; set; }
 
         /// <summary>

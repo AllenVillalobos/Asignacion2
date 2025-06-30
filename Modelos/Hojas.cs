@@ -8,48 +8,48 @@ namespace Asignacion2.Modelos
     /// <summary>
     /// Representa una hoja clínica asociada a una mascota. 
     /// Contiene información sobre síntomas, diagnóstico, tratamiento, fechas y 
-    /// usuarios que modifican o agregan datos.
+    /// usuarios que modifican o agregan datos
     /// </summary>
     public class Hojas
     {
-        /// <summary>Identificador único de la hoja clínica.</summary>
+        /// <summary>Identificador único de la hoja clínica</summary>
         private int identificador { get; set; }
 
-        /// <summary>Descripción de los síntomas observados en la mascota.</summary>
+        /// <summary>Descripción de los síntomas observados en la mascota</summary>
         private String sintomas { get; set; }
 
-        /// <summary>Diagnóstico realizado con base en los síntomas.</summary>
+        /// <summary>Diagnóstico realizado con base en los síntomas</summary>
         private String diagnostico { get; set; }
 
-        /// <summary>Tratamiento prescrito para la mascota.</summary>
+        /// <summary>Tratamiento prescrito para la mascota</summary>
         private String tratamiento { get; set; }
 
-        /// <summary>Identificador de la mascota a la que pertenece la hoja clínica.</summary>
+        /// <summary>Identificador de la mascota a la que pertenece la hoja clínica</summary>
         private int idMascota { get; set; }
 
-        /// <summary>Fecha en que se registró la hoja por primera vez.</summary>
+        /// <summary>Fecha en que se registró la hoja por primera vez</summary>
         private DateTime fechaAdicion { get; set; }
 
-        /// <summary>Última fecha en que se modificó la hoja.</summary>
+        /// <summary>Última fecha en que se modificó la hoja</summary>
         private DateTime fechaModificacion { get; set; }
 
-        /// <summary>Nombre del usuario que registró la hoja clínica.</summary>
+        /// <summary>Nombre del usuario que registró la hoja clínica</summary>
         private String adicionadoPor { get; set; }
 
-        /// <summary>Nombre del usuario que realizó la última modificación.</summary>
+        /// <summary>Nombre del usuario que realizó la última modificación</summary>
         private String modificadorPor { get; set; }
 
         /// <summary>
-        /// Constructor vacío requerido para instanciación sin parámetros.
-        /// Útil en procesos de serialización o cuando se llenan propiedades por separado.
+        /// Constructor vacío requerido para instanciación sin parámetros
+        /// Útil en procesos de serialización o cuando se llenan propiedades por separado
         /// </summary>
         public Hojas()
         {
         }
 
         /// <summary>
-        /// Constructor para agregar una hoja clínica nueva. 
-        /// No incluye modificación porque es la creación inicial.
+        /// Constructor para agregar una hoja clínica nueva
+        /// No incluye modificación porque es la creación inicial
         /// </summary>
         public Hojas(int identificador, String sintomas, String diagnostico, 
             String tratamiento, int idMascota, DateTime fechaAdicion, String adicionadoPor)
@@ -64,8 +64,8 @@ namespace Asignacion2.Modelos
         }
 
         /// <summary>
-        /// Constructor para modificar una hoja existente. 
-        /// No incluye datos de creación, solo campos editables y metadata de modificación.
+        /// Constructor para modificar una hoja existente
+        /// No incluye datos de creación, solo campos editables y metadata de modificación
         /// </summary>
         public Hojas(int identificador, String sintomas, String diagnostico,
             String tratamiento, DateTime fechaModificacion, String modificadorPor)
@@ -79,8 +79,8 @@ namespace Asignacion2.Modelos
         }
 
         /// <summary>
-        /// Devuelve una representación en texto de la hoja clínica. 
-        /// Útil para mostrar información rápidamente en consola o logs.
+        /// Devuelve una representación en texto de la hoja clínica
+        /// Útil para mostrar información rápidamente en consola o logs
         /// </summary>
         override
         public String ToString()

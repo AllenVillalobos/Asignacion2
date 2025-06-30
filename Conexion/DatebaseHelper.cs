@@ -12,7 +12,7 @@ namespace Asignacion2.Conexion
     public class DatabaseHelper
     {
         /// <summary>
-        /// Devuelve la cadena de conexión desde el archivo de configuración.
+        /// Devuelve la cadena de conexión desde el archivo de web.config
         /// </summary>
         private string GetConnectionString()
         {
@@ -20,11 +20,11 @@ namespace Asignacion2.Conexion
         }
 
         /// <summary>
-        /// Guarda los errores en un archivo de texto para revisar después.
+        /// Guarda los errores en un archivo de texto para revisar después
         /// </summary>
         public void LogError(Exception ex)
         {
-            string logFilePath = @"C:\Error_DB\investigacion2.log";
+            string logFilePath = @"C:\Error_DB\asignacion2.log";
 
             using (StreamWriter writer = new StreamWriter(logFilePath, true))
             {
@@ -35,7 +35,7 @@ namespace Asignacion2.Conexion
         }
 
         /// <summary>
-        /// Ejecuta una consulta SELECT y devuelve los resultados en una tabla.
+        /// Ejecuta una consulta SELECT y devuelve los resultados en una tabla
         /// </summary>
         public DataTable ExecuteSelectQuery(string query, SqlParameter[] sqlParameters)
         {
@@ -70,7 +70,7 @@ namespace Asignacion2.Conexion
         }
 
         /// <summary>
-        /// Ejecuta una consulta INSERT, UPDATE o DELETE sin devolver datos.
+        /// Ejecuta una consulta INSERT, UPDATE o DELETE sin devolver datos
         /// </summary>
         public void ExecuteQuery(string query, SqlParameter[] sqlParameters)
         {

@@ -11,7 +11,7 @@ namespace Asignacion2.Paginas
     public partial class AgregarMascota : System.Web.UI.Page
     {
         /// <summary>
-        /// Carga inicial de la página. Verifica si hay sesión iniciada y configura controles.
+        /// Carga inicial de la página. Verifica si hay sesión iniciada y configura controles
         /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +31,7 @@ namespace Asignacion2.Paginas
         }
 
         /// <summary>
-        /// Busca los datos del propietario según su identificación. Si no existe, redirige para agregarlo.
+        /// Busca los datos del propietario según su identificación. Si no existe, redirige para agregarlo
         /// </summary>
         public void btnBuscarPropietario_Click(object sender, EventArgs e)
         {
@@ -71,7 +71,7 @@ namespace Asignacion2.Paginas
         }
 
         /// <summary>
-        /// Redirige a la página para agregar un nuevo propietario.
+        /// Redirige a la página para agregar un nuevo propietario
         /// </summary>
         public void btnAgregarPropietario_Click(object sender, EventArgs e)
         {
@@ -79,7 +79,7 @@ namespace Asignacion2.Paginas
         }
 
         /// <summary>
-        /// Actualiza los datos del propietario en la base de datos.
+        /// Actualiza los datos del propietario en la base de datos
         /// </summary>
         public void btnActualizar_Click(object sender, EventArgs e)
         {
@@ -106,8 +106,8 @@ namespace Asignacion2.Paginas
         }
 
         /// <summary>
-        /// Guarda una nueva mascota asociada al propietario encontrado. 
-        /// Si no hay propietario, redirige para agregar uno.
+        /// Guarda una nueva mascota asociada al propietario encontrado 
+        /// Si no hay propietario, redirige para agregar uno
         /// </summary>
         public void btnGuardarMascota_Click(object sender, EventArgs e)
         {
@@ -127,7 +127,7 @@ namespace Asignacion2.Paginas
                     SqlParameter[] sqlParameters2 = new SqlParameter[] {
                         new SqlParameter("@pNombre", System.Data.SqlDbType.NVarChar, 15) { Value = txtNombreMascota.Text },
                         new SqlParameter("@pFechaNacimiento", System.Data.SqlDbType.NVarChar, 50) { Value = cldFechaNacimiento.SelectedDate.ToString("dd/MM/yyyy") },
-                        new SqlParameter("@pSexo", System.Data.SqlDbType.Char, 1) { Value = ddlSexo.SelectedValue.ToString()},
+                        new SqlParameter("@pSexo", System.Data.SqlDbType.Char, 1) { Value = ddlSexo.SelectedValue},
                         new SqlParameter("@pPeso", System.Data.SqlDbType.Int) { Value = int.Parse(txtPesoMascota.Text) },
                         new SqlParameter("@pAlergias", System.Data.SqlDbType.NVarChar, 150) { Value = txtAlergiasMascota.Text },
                         new SqlParameter("@pIdentificadorPropietario", System.Data.SqlDbType.Int) { Value = IDPropietario },
@@ -148,7 +148,7 @@ namespace Asignacion2.Paginas
         }
 
         /// <summary>
-        /// Limpia todos los campos del formulario para ingresar nueva información.
+        /// Limpia todos los campos del formulario para ingresar nueva información
         /// </summary>
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {

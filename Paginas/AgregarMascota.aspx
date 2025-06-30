@@ -16,18 +16,18 @@
         <div class="clinica-container">
             <div class="gradient-card">
                 <!--
-                /// Muestra el usuario actualmente conectado al sistema.
+                /// Muestra el usuario actualmente conectado al sistema
                 -->
                 <asp:Label runat="server">Usuario Conectado</asp:Label><br />
                 <asp:TextBox ReadOnly="true" ID="txtUsuarios" runat="server" CssClass="form-control" /><br />
 
                 <!--
-                /// Título principal de la sección de registro de mascotas.
+                /// Título principal de la sección de registro de mascotas
                 -->
                 <h2 class="page-title">Agregar Mascota</h2>
 
                 <!--
-                /// Campo para ingresar la cédula o ID del propietario para buscarlo.
+                /// Campo para ingresar la cédula del propietario para buscarlo
                 -->
                 <label for="txtPropietarioID">Dueño</label>
                 <asp:TextBox ID="txtPropietarioIdentificacion" runat="server" 
@@ -35,21 +35,21 @@
                 <br />
 
                 <!--
-                /// Botón para buscar los datos del propietario en la base de datos.
+                /// Botón para buscar los datos del propietario en la base de datos
                 -->
                 <asp:Button Text="Buscar Propietario" runat="server" 
                     OnClick="btnBuscarPropietario_Click" ID="btnBuscarPropietario" 
                     CssClass="btn-primary"/>
 
                 <!--
-                /// Botón para redirigir a la sección de agregar un nuevo propietario.
+                /// Botón para redirigir a la sección de agregar un nuevo propietario
                 -->
                 <asp:Button Text="Agregar Propietario" runat="server" 
                     OnClick="btnAgregarPropietario_Click" ID="btnAgregarPropietario" 
                     CssClass="btn-primary"/>
 
                 <!--
-                /// Muestra el primer nombre del propietario encontrado (solo lectura).
+                /// Muestra el primer nombre del propietario encontrado (solo lectura)
                 -->
                 <label for="txtPropietarioNombre">Primer Nombre</label>
                 <asp:TextBox ID="txtPropietarioNombre" runat="server" 
@@ -65,7 +65,7 @@
                 <br />
 
                 <!--
-                /// Campos editables para actualizar el correo y teléfono del propietario.
+                /// Campos editables para actualizar el correo y teléfono del propietario
                 -->
                 <label for="txtCorreo">Correo Electronico</label>
                 <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
@@ -77,7 +77,7 @@
                     OnClick="btnActualizar_Click" CssClass="btn-primary" />
 
                 <!--
-                /// Campos para registrar información de la nueva mascota.
+                /// Campos para registrar información de la nueva mascota
                 -->
                 <label for="txtNombreMascota">Nombre Mascota</label>
                 <asp:TextBox ID="txtNombreMascota" runat="server" CssClass="form-control" 
@@ -108,13 +108,13 @@
                     OnClick="btnLimpiar_Click" />
 
                 <!--
-                /// Muestra mensajes de éxito o error al usuario.
+                /// Muestra mensajes de éxito o error al usuario
                 -->
                 <asp:Label ID="lblMensajeMascota" runat="server" CssClass="error-msg" />
             </div>
 
             <!--
-            /// Sección que muestra metadatos sobre quién creó o modificó el registro.
+            /// Sección que muestra metadatos sobre quién creó o modificó el registro
             -->
             <div class="gradient-card">
                 <asp:Label>Adicionado Por</asp:Label><br />

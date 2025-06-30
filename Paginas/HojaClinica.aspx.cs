@@ -12,7 +12,7 @@ namespace Asignacion2.Paginas
     public partial class HojaClinica : System.Web.UI.Page
     {
         /// <summary>
-        /// Verifica si hay sesión activa al cargar la página y llena datos de usuario y fecha.
+        /// Verifica si hay sesión activa al cargar la página y llena datos de usuario y fecha
         /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,7 +30,7 @@ namespace Asignacion2.Paginas
         }
 
         /// <summary>
-        /// Busca los datos de una mascota usando su ID e imprime los resultados en los campos.
+        /// Busca los datos de una mascota usando su ID e imprime los resultados en los campos
         /// </summary>
         public void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -63,7 +63,7 @@ namespace Asignacion2.Paginas
         }
 
         /// <summary>
-        /// Actualiza los datos básicos de la mascota, como peso o alergias.
+        /// Actualiza los datos básicos de la mascota, como peso o alergias
         /// </summary>
         public void btnActualizar_Click(object sender, EventArgs e)
         {
@@ -88,7 +88,7 @@ namespace Asignacion2.Paginas
         }
 
         /// <summary>
-        /// Guarda una nueva hoja clínica para la mascota con síntomas, diagnóstico y tratamiento.
+        /// Guarda una nueva hoja clínica para la mascota con síntomas, diagnóstico y tratamiento
         /// </summary>
         public void btnGuardarHoja_Click(object sender, EventArgs e)
         {
@@ -113,7 +113,7 @@ namespace Asignacion2.Paginas
         }
 
         /// <summary>
-        /// Limpia todos los campos del formulario de hoja clínica.
+        /// Limpia todos los campos del formulario de hoja clínica
         /// </summary>
         public void btnLimpiar_Click(object sender, EventArgs e)
         {

@@ -8,17 +8,17 @@ namespace Asignacion2.Paginas
     public partial class Login : System.Web.UI.Page
     {
         /// <summary>
-        /// Evento que se ejecuta al cargar la página. Actualmente no realiza ninguna acción.
+        /// Evento que se ejecuta al cargar la página. Actualmente no realiza ninguna acción
         /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
-            // No se requiere lógica al cargar la página por ahora.
+            // No se requiere lógica al cargar la página por ahora
         }
 
         /// <summary>
-        /// Valida las credenciales ingresadas por el usuario.
-        /// Si son correctas, se guarda el nombre en la sesión y se redirige a HojaClinica.aspx.
-        /// Si son incorrectas, muestra un mensaje de error.
+        /// Valida las credenciales ingresadas por el usuario
+        /// Si son correctas, se guarda el nombre en la sesión y se redirige a HojaClinica.aspx
+        /// Si son incorrectas, muestra un mensaje de error
         /// </summary>
         public void btnIngresar_Click(object sender, EventArgs e)
         {

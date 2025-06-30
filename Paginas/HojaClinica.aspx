@@ -13,7 +13,7 @@
   <form id="form1" runat="server">
     <div class="clinica-container">
 
-      <!-- Tarjeta: Información del usuario y fecha de atención -->
+      <!-- Información del usuario y fecha de atención -->
       <div class="gradient-card">
         <!-- Muestra el nombre del usuario conectado -->
         <asp:Label runat="server">Usuario Conectado</asp:Label><br />
@@ -24,7 +24,7 @@
         <asp:TextBox ReadOnly="true" ID="txtFecha" runat="server" CssClass="form-control" />
       </div>
 
-      <!-- Tarjeta: Identificador y datos generales de la mascota -->
+      <!-- Identificador y datos generales de la mascota -->
       <div class="gradient-card">
 
         <!-- Ingreso del ID de la mascota -->

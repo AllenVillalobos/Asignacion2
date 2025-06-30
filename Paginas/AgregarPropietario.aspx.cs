@@ -8,7 +8,7 @@ namespace Asignacion2.Paginas
     public partial class AgregarPropietario : System.Web.UI.Page
     {
         /// <summary>
-        /// Carga inicial de la página. Verifica sesión activa y configura campos de usuario.
+        /// Carga inicial de la página. Verifica sesión activa y configura campos de usuario
         /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,7 +25,7 @@ namespace Asignacion2.Paginas
         }
 
         /// <summary>
-        /// Guarda un nuevo propietario en la base de datos usando datos del formulario.
+        /// Guarda un nuevo propietario en la base de datos usando datos del formulario
         /// </summary>
         public void btnGuardarDueño_Click(object sender, EventArgs e)
         {
@@ -54,7 +54,7 @@ namespace Asignacion2.Paginas
         }
 
         /// <summary>
-        /// Limpia todos los campos del formulario para ingresar nuevos datos.
+        /// Limpia todos los campos del formulario para ingresar nuevos datos
         /// </summary>
         public void btnLimiar_Click(object sender, EventArgs e)
         {
