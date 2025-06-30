@@ -15,15 +15,20 @@ namespace Asignacion2.Paginas
         /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Verifica si hay sesión iniciada. Si no, redirige al login.
             if (Session["UsuarioNombre"] == null)
             {
                 Response.Redirect("Login.aspx");
             }
             else
             {
+                // Si hay sesión, muestra el usuario y la fecha actual.
                 txtUsuario.Text = Session["UsuarioNombre"].ToString();
                 txtFechaAdicion.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 txtUsuarios.Text = Session["UsuarioNombre"].ToString();
+            }
+            if (!IsPostBack) // Solo la primera vez que carga la página
+            {
                 ddlSexo.Items.Clear();
                 ddlSexo.Items.Add(new ListItem("Macho", "M"));
                 ddlSexo.Items.Add(new ListItem("Hembra", "H"));

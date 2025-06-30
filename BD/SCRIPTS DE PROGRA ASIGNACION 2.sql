@@ -1,4 +1,5 @@
 -- Procedimiento para iniciar sesión
+GO
 CREATE PROCEDURE spLogin
 (
 @pNombreUsuario NVARCHAR(15),
@@ -31,7 +32,7 @@ BEGIN CATCH
 END CATCH
 END;
 
-
+GO
 -- Procedimiento para crear una hoja clínica para una mascota
 CREATE PROCEDURE spCrearHojaClinica
 (
@@ -65,7 +66,7 @@ BEGIN CATCH
 END CATCH
 END;
 
-
+GO
 -- Procedimiento para insertar un nuevo propietario
 CREATE PROCEDURE spInsertarPropietario
 (
@@ -110,7 +111,7 @@ BEGIN CATCH
 END CATCH
 END;
 
-
+GO
 -- Procedimiento para consultar un propietario por identificación
 CREATE PROCEDURE spConsultarPopietario
 (
@@ -142,7 +143,7 @@ BEGIN CATCH
 END CATCH
 END;
 
-
+GO
 -- Procedimiento para actualizar los datos de un propietario
 CREATE PROCEDURE spActualizarPropietario
 (
@@ -186,7 +187,7 @@ BEGIN CATCH
 END CATCH
 END;
 
-
+GO
 -- Procedimiento para insertar una nueva mascota
 CREATE PROCEDURE spInsertarMascota
 (
@@ -228,7 +229,7 @@ BEGIN CATCH
 END CATCH
 END;
 
-
+GO
 -- Procedimiento para buscar una mascota por nombre y propietario
 CREATE PROCEDURE spBuscarMascotaPorPropietarioNombre
 (
@@ -264,6 +265,7 @@ END;
 
 select * from VT_MASCOTAS;
 
+GO
 -- Procedimiento para buscar una mascota por su identificador
 CREATE PROCEDURE spBuscarMascotaPorIdentificador
 (
@@ -296,7 +298,7 @@ BEGIN CATCH
 END CATCH
 END;
 
-
+GO
 -- Procedimiento para actualizar los datos de una mascota
 CREATE PROCEDURE spActualizarMascota
 (
